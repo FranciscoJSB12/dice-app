@@ -2,9 +2,10 @@ import { View, Text, Pressable, StyleSheet } from "react-native";
 
 interface PrimaryButtonProps {
   children: React.ReactNode;
+  onPress: () => void;
 }
 
-export function PrimaryButton({ children }: PrimaryButtonProps) {
+export function PrimaryButton({ children, onPress }: PrimaryButtonProps) {
   function buttonStyles({ pressed }: { pressed: boolean }) {
     return pressed
       ? [styles.buttonInnerContainer, styles.pressed]
@@ -13,7 +14,7 @@ export function PrimaryButton({ children }: PrimaryButtonProps) {
 
   return (
     <View style={styles.buttonOuterContainer}>
-      <Pressable onPress={() => console.log("pressed")} style={buttonStyles}>
+      <Pressable onPress={onPress} style={buttonStyles}>
         <Text style={styles.buttonText}>{children}</Text>
       </Pressable>
     </View>
