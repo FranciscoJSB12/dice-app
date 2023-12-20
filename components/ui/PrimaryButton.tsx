@@ -1,4 +1,5 @@
 import { View, Text, Pressable, StyleSheet } from "react-native";
+import { colors } from "../../consts/colors";
 
 interface PrimaryButtonProps {
   children: React.ReactNode;
@@ -28,7 +29,7 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   buttonInnerContainer: {
-    backgroundColor: "#72063c",
+    backgroundColor: colors.primary700,
     paddingVertical: 8,
     paddingHorizontal: 16,
     elevation: 2,
